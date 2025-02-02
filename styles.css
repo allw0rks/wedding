@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark-theme {
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: #ffffff;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.names {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4a3d;
+}
+
+.details-section, .countdown-section, .wishes-section, .map-section {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.details-section.visible, .countdown-section.visible, .wishes-section.visible, .map-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.details-content p {
+    font-size: 1.2rem;
+    color: inherit;
+    margin-bottom: 10px;
+}
+
+.details-content .signature {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.countdown-section h2 {
+    font-size: 2rem;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    color: inherit;
+}
+
+#countdown span {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 10px;
+    color: inherit;
+    margin: 5px;
+}
+
+.wishes-section h2 {
+    font-size: 2rem;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+#wishes-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#wishes-form textarea {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.map-section h2 {
+    font-size: 2rem;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+#music-toggle, #theme-toggle {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#music-toggle:hover, #theme-toggle:hover {
+    background-color: #ff4a3d;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .names {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .details-content p {
+        font-size: 1rem;
+    }
+
+    #countdown span {
+        font-size: 1.5rem;
+    }
+
+    .wishes-section h2, .map-section h2, .countdown-section h2 {
+        font-size: 1.5rem;
+    }
+
+    #wishes-form textarea {
+        width: 100%;
+    }
+
+    .controls {
+        bottom: 10px;
+        right: 10px;
+    }
+}

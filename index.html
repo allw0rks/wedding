@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="preloader">
+        <img src="img/1.png" alt="Wedding Couple" class="preloader-image">
+        <div class="loading-text">Загрузка: <span id="loading-percentage">0%</span></div>
+    </div>
+    <div class="main-content">
+        <div class="card">
+            <h1 class="names">Приглашаем вас на свадьбу</h1>
+            <h2 class="names">Комрон & Умеда</h2>
+            <button id="details-button">Подробнее</button>
+        </div>
+    </div>
+    <div class="details-section">
+        <div class="details-content">
+            <p>С любовью и радостью</p>
+            <p>мы приглашаем вас разделить с нами один из самых важных моментов нашей жизни!</p>
+            <p>В день, когда два сердца становятся одним,</p>
+            <p>мы будем счастливы увидеть вас среди наших близких и друзей.</p>
+            <p><strong>Дата:</strong> 25 май 2025</p>
+            <p><strong>Время:</strong> 18:00</p>
+            <p><strong>Место:</strong> Ресторан "Счастье", ул. Свадебная, 1</p>
+            <p>Наша история только начинается, и мы будем рады, если вы станете частью этого дня!</p>
+            <p>С нетерпением ждем встречи!</p>
+            <p class="signature">Комрон & Умеда</p>
+        </div>
+    </div>
+    <div class="countdown-section">
+        <h2>До свадьбы осталось:</h2>
+        <div id="countdown">
+            <span id="days"></span> дней
+            <span id="hours"></span> часов
+            <span id="minutes"></span> минут
+            <span id="seconds"></span> секунд
+        </div>
+    </div>
+    <div class="wishes-section">
+        <h2>Оставьте ваше пожелание</h2>
+        <form id="wishes-form">
+            <textarea id="wish" placeholder="Ваше пожелание..." required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="map-section">
+        <h2>Место проведения</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3469.4225638592156!2d69.64230183816431!3d40.27349527606878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b1b37c6ec3072b%3A0xe6c2bbfb1f3c9379!2z0KLRg9C50YXQvtC90LDQuCDQnNC40YDQt9C-0YXQsNCx0LjQsQ!5e0!3m2!1sru!2s!4v1738470610469!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <audio id="background-music" loop>
+        <source src="img/1.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+    <div class="controls">
+        <button id="music-toggle">🎵 Выключить музыку</button>
+        <button id="theme-toggle">🌙 Темная тема</button>
+    </div>
+    <canvas id="fireworks"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
